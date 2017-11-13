@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/header"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="blackbelt.com.livrariasaraiva.views.CadastroLivro">
+
+        <RelativeLayout
+            android:id="@+id/cabecalho"
+            android:layout_width="match_parent"
+            android:layout_height="90sp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="10sp">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="90sp"
+                android:layout_height="90sp"
+                android:background="@drawable/geekbooks" />
+
+            <TextView
+                android:id="@+id/nomeLivraria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_toRightOf="@id/logo"
+                android:text="Geeks Book"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/nomeLivraria"
+                android:layout_marginBottom="10sp"
+                android:text="Administração - Novo Livro"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150sp"
+            android:layout_marginRight="15sp"
+            android:layout_marginLeft="15sp">
+
+            <ImageView
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:id="@+id/cadastroImagem"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="5sp"/>
+
+            <ImageButton
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/image_galeria"
+                android:id="@+id/cadastroBuscarImg"
+                android:onClick="selecionarImagem"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50sp"
+                android:layout_marginTop="30sp"
+                android:layout_alignBaseline="@id/cadastroImagem"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="Buscar Imagem"
+                android:layout_below="@id/cadastroBuscarImg"
+                android:textColor="@color/letrasPadrao"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25sp"
+                />
+
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Número do ISBN..."
+            android:textSize="15sp"
+            android:id="@+id/cadastroIsbn"
+            android:inputType="number"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Título do Livro..."
+            android:textSize="15sp"
+            android:inputType="text"
+            android:id="@+id/cadastroTitulo"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sub-Título do Livro (Se houver)..."
+            android:textSize="15sp"
+            android:inputType="text"
+            android:id="@+id/cadastroSubTitulo"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Número da Edição do Livro..."
+            android:textSize="15sp"
+            android:inputType="number"
+            android:maxLength="4"
+            android:id="@+id/cadastroEdicao"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome do Autor..."
+            android:textSize="15sp"
+            android:inputType="textPersonName"
+            android:id="@+id/cadastroAutor"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantidade de Páginas..."
+            android:textSize="15sp"
+            android:inputType="number"
+            android:id="@+id/cadastroQtdPag"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ano de Publicação..."
+            android:textSize="15sp"
+            android:id="@+id/cadastroAnoPub"
+            android:inputType="number"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            android:maxLength="4"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome da Editora..."
+            android:textSize="15sp"
+            android:inputType="textNoSuggestions"
+            android:id="@+id/cadastroNomeEditora"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            />
+
+        <Spinner
+            android:id="@+id/cadastroCategoria"
+            android:layout_width="fill_parent"
+            android:layout_height="30sp"
+            android:scrollbarSize="30sp"
+            android:layout_marginRight="15sp"
+            android:layout_marginLeft="15sp"
+            android:entries="@array/categorias"
+            android:layout_below="@id/cabecalho"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30sp">
+
+            <ImageButton
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/salvar"
+                android:id="@+id/salvarDados"
+                android:onClick="salvarBanco"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40sp"
+                />
+
+            <ImageButton
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/back"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40sp"
+                android:onClick="voltar"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salvar"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="20sp"
+                android:layout_below="@id/salvarDados"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voltar"
+                android:textSize="20sp"
+                android:textColor="@color/letrasPadrao"
+                android:layout_below="@id/salvarDados"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40sp"
+                />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</ScrollView>

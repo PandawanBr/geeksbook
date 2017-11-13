@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categorias">
+        <item>Selecione uma categoria...</item>
+        <item>Cursos e Idiomas</item>
+        <item>Economia</item>
+        <item>Gastronomia</item>
+        <item>Informátca</item>
+        <item>Literatura Estrangeira</item>
+        <item>Literatura Nacional</item>
+        <item>Medicina</item>
+        <item>Religião</item>
+    </string-array>
+</resources>

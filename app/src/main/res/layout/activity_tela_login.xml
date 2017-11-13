@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="blackbelt.com.livrariasaraiva.views.TelaLogin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="90sp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="10sp"
+            android:background="@color/header">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="90sp"
+                android:layout_height="90sp"
+                android:background="@drawable/geekbooks" />
+
+            <TextView
+                android:id="@+id/nomeLivraria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_toRightOf="@id/logo"
+                android:text="Geeks Book"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/nomeLivraria"
+                android:layout_marginBottom="10sp"
+                android:text="Login"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="242dp"
+            android:layout_marginLeft="25sp"
+            android:layout_marginRight="25sp"
+            android:layout_marginTop="90sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="LOGIN"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/loginPrincipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:hint="Digite seu login..."
+                android:inputType="text"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="SENHA"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/senhaPincipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:hint="Digite sua senha..."
+                android:inputType="textPassword"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="25sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/esqueceuSenha"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:text="@string/esqueceuSenha"
+                android:textColor="#0000FF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"/>
+
+            <Button
+                android:id="@+id/primeiroLogin"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:layout_gravity="left"
+                android:gravity="left"
+                android:text="Primeiro Acesso?"
+                android:textColor="#0000FF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:onClick="primeiroLogin"
+                android:layout_alignParentLeft="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50sp">
+
+            <ImageButton
+                android:id="@+id/entrarLogin"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="50sp"
+                android:background="@drawable/login"
+                android:onClick="logarMenu"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:id="@+id/sairLogin"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50sp"
+                android:background="@drawable/sair"
+                android:onClick="sair"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/entrarLogin"
+                android:layout_marginLeft="45sp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Login"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/entrarLogin"
+                android:layout_marginRight="45sp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Sair"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

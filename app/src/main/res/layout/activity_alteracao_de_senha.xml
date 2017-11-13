@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/header"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginRight="15sp"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="5sp"
+        tools:context="blackbelt.com.livrariasaraiva.views.AlteracaoDeSenha">
+
+        <RelativeLayout
+            android:id="@+id/cabecalho"
+            android:layout_width="match_parent"
+            android:layout_height="90sp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="10sp">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="90sp"
+                android:layout_height="90sp"
+                android:background="@drawable/geekbooks" />
+
+            <TextView
+                android:id="@+id/nomeLivraria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_toRightOf="@id/logo"
+                android:text="Geeks Book"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30sp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/nomeLivraria"
+                android:layout_marginBottom="10sp"
+                android:text="Alteração de Senha"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginTop="80sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/letrasPadrao"
+            android:id="@+id/login"
+            android:enabled="false"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Senha Atual"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginTop="5sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/letrasPadrao"
+            android:id="@+id/senhaAtual"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nova Senha"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginTop="5sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/letrasPadrao"
+            android:id="@+id/novaSenha"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirma Senha"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginTop="5sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/letrasPadrao"
+            android:id="@+id/confirmaSenha"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30sp">
+
+            <ImageButton
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/salvar"
+                android:id="@+id/salvarDados"
+                style="?attr/borderlessButtonStyle"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40sp"
+                />
+
+            <ImageButton
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/back"
+                style="?attr/borderlessButtonStyle"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40sp"
+                android:onClick="voltar"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salvar"
+                android:textColor="@color/letrasPadrao"
+                android:textSize="20sp"
+                android:layout_below="@id/salvarDados"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voltar"
+                android:textSize="20sp"
+                android:textColor="@color/letrasPadrao"
+                android:layout_below="@id/salvarDados"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40sp"
+                />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

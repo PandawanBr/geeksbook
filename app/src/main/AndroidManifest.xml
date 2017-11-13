@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="blackbelt.com.livrariasaraiva">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/iconeapp"
+        android:label="Geeks Book"
+        android:roundIcon="@drawable/iconeapp"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".views.TelaLogin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.MenuPrincipal" />
+        <activity android:name=".views.Catalogo" />
+        <activity android:name=".views.CatalogoTodosLivros" />
+        <activity android:name=".views.CatalogoCategoria" />
+        <activity android:name=".views.CatalogoBusca" />
+        <activity android:name=".views.AdministrarLivros" />
+        <activity android:name=".views.AlteracaoDeSenha" />
+        <activity android:name=".views.EquipeDesenvolvimento" />
+        <activity android:name=".views.PrimeiroAcesso" />
+        <activity android:name=".views.CadastroLivro"></activity>
+    </application>
+
+</manifest>
