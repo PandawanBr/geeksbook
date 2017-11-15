@@ -24,6 +24,8 @@ public class CatalogoTodosLivros extends AppCompatActivity {
 
         listaLivros = (ListView) findViewById(R.id.catalogoTodosLivros);
 
+
+
     }
 
     @Override

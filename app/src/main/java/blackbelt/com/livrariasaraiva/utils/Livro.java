@@ -1,18 +1,20 @@
 package blackbelt.com.livrariasaraiva.utils;
 
+import java.io.Serializable;
+
 /**
  * Created by kobayashi on 05/11/17.
  */
 
-public class Livro {
-    private long id;
+public class Livro implements Serializable{
+    private Long id;
     private String titulo;
-    private int isbn;
+    private Integer isbn;
     private String subTitulo;
-    private int edicao;
+    private Integer edicao;
     private String autor;
-    private int qtdPags;
-    private int anoPub;
+    private Integer qtdPags;
+    private Integer anoPub;
     private String nomeEditora;
     private String categoria;
     private String imagemCapa;
@@ -105,9 +107,5 @@ public class Livro {
         this.imagemCapa = imagemCapa;
     }
 
-    @Override
-    public String toString() {
-        return getId() + " - " + getTitulo();
-    }
 
 }

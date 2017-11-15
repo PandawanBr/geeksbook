@@ -1,8 +1,8 @@
 package blackbelt.com.livrariasaraiva.views;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,6 +33,21 @@ public class AdministrarLivros extends AppCompatActivity {
 
         registerForContextMenu(listaLivros);
 
+        listaLivros.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> lista, View item, int position, long id) {
+                Livro livro = (Livro) listaLivros.getItemAtPosition(position);
+
+                Intent intent = new Intent(AdministrarLivros.this, CadastroLivro.class);
+
+                intent.putExtra("livro", livro);
+
+                startActivity(intent);
+
+                finish();
+            }
+        });
+
     }
 
     @Override
@@ -61,7 +76,6 @@ public class AdministrarLivros extends AppCompatActivity {
                 this, android.R.layout.simple_list_item_1, livros);
 
         listaLivros.setAdapter(adapter);
-
     }
 
     public void pesquisarLivros(View v){
@@ -84,7 +98,6 @@ public class AdministrarLivros extends AppCompatActivity {
     public void onCreateContextMenu(ContextMenu menu,
                                     View v, final ContextMenu.ContextMenuInfo menuInfo) {
         MenuItem deletar = menu.add("Deletar");
-        MenuItem editar = menu.add("Editar");
         deletar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -102,6 +115,7 @@ public class AdministrarLivros extends AppCompatActivity {
                 return false;
             }
         });
+
     }
 
 

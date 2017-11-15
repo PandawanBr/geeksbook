@@ -10,9 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
+import blackbelt.com.livrariasaraiva.FormularioHelper;
 import blackbelt.com.livrariasaraiva.R;
 import blackbelt.com.livrariasaraiva.dao.LivrariaDao;
 import blackbelt.com.livrariasaraiva.utils.Livro;
@@ -21,15 +21,7 @@ public class CadastroLivro extends AppCompatActivity {
 
     private ImageView imagemCapa;
     private EditText isbn;
-    private EditText titulo;
-    private EditText subTitulo;
-    private EditText edicao;
-    private EditText autor;
-    private EditText qtdPaginas;
-    private EditText anoPublicacao;
-    private EditText editora;
-    private Spinner categoria;
-    String caminhoImagem;
+    private FormularioHelper helper;
     public static final int PICK_IMAGE = 1234;
     private static int RESULT_LOAD_IMAGE = 1;
 
@@ -39,16 +31,18 @@ public class CadastroLivro extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_livro);
         getSupportActionBar().hide();
 
-        imagemCapa = (ImageView) findViewById(R.id.cadastroImagem);
         isbn = (EditText) findViewById(R.id.cadastroIsbn);
-        titulo = (EditText) findViewById(R.id.cadastroTitulo);
-        subTitulo = (EditText) findViewById(R.id.cadastroSubTitulo);
-        edicao = (EditText) findViewById(R.id.cadastroEdicao);
-        autor = (EditText) findViewById(R.id.cadastroAutor);
-        qtdPaginas = (EditText) findViewById(R.id.cadastroQtdPag);
-        anoPublicacao = (EditText) findViewById(R.id.cadastroAnoPub);
-        editora = (EditText) findViewById(R.id.cadastroNomeEditora);
-        categoria = (Spinner) findViewById(R.id.cadastroCategoria);
+
+        helper = new FormularioHelper(this);
+
+        Intent intent = getIntent();
+        Livro livro = (Livro) intent.getSerializableExtra("livro");
+
+        if (livro != null){
+            helper.preencheFormulario(livro);
+
+            isbn.setEnabled(false);
+        }
 
     }
 
@@ -71,7 +65,7 @@ public class CadastroLivro extends AppCompatActivity {
             imagemCapa = (ImageView) findViewById(R.id.cadastroImagem);
             imagemCapa.setImageBitmap(BitmapFactory.decodeFile(picturePath));
             Toast.makeText(this, picturePath, Toast.LENGTH_SHORT).show();
-            caminhoImagem = picturePath;
+            helper.setCaminhoImagem(selectedImage);
         }
     }
 
@@ -86,27 +80,9 @@ public class CadastroLivro extends AppCompatActivity {
 
         Livro livro = new Livro();
 
-        if(!isbn.getText().equals("") &&
-                !titulo.getText().equals("") &&
-                !edicao.getText().equals("") &&
-                !autor.getText().equals("") &&
-                !qtdPaginas.getText().equals("") &&
-                !anoPublicacao.getText().equals("") &&
-                !editora.getText().equals("") &&
-                !categoria.getSelectedItem().equals("Selecione uma categoria...")) {
+        if(helper.conferirCampos()) {
 
-            livro.setImagemCapa(caminhoImagem);
-            livro.setIsbn(Integer.parseInt(isbn.getText().toString()));
-            livro.setTitulo(titulo.getText().toString());
-            livro.setSubTitulo(subTitulo.getText().toString());
-            livro.setEdicao(Integer.parseInt(edicao.getText().toString()));
-            livro.setAutor(autor.getText().toString());
-            livro.setQtdPags(Integer.parseInt(qtdPaginas.getText().toString()));
-            livro.setAnoPub(Integer.parseInt(anoPublicacao.getText().toString()));
-            livro.setNomeEditora(editora.getText().toString());
-            livro.setCategoria(categoria.getSelectedItem().toString());
-
-            dao.insereLivro(livro);
+            dao.insereLivro(helper.pegaLivro());
             dao.close();
 
             Toast.makeText(this, "Salvo com sucesso!!", Toast.LENGTH_SHORT).show();
