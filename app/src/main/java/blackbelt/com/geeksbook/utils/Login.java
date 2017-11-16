@@ -1,10 +1,12 @@
-package blackbelt.com.livrariasaraiva.utils;
+package blackbelt.com.geeksbook.utils;
+
+import java.io.Serializable;
 
 /**
  * Created by kobayashi on 05/11/17.
  */
 
-public class Login {
+public class Login implements Serializable{
     private String login;
     private String senha;
 

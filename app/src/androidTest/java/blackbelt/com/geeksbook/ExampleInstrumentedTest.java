@@ -1,4 +1,4 @@
-package blackbelt.com.livrariasaraiva;
+package blackbelt.com.geeksbook;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

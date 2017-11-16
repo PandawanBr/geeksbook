@@ -1,10 +1,10 @@
-package blackbelt.com.livrariasaraiva.views;
+package blackbelt.com.geeksbook.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import blackbelt.com.livrariasaraiva.R;
+import blackbelt.com.geeksbook.R;
 
 public class EquipeDesenvolvimento extends AppCompatActivity {
 

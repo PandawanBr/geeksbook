@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="blackbelt.com.livrariasaraiva">
+    package="blackbelt.com.geeksbook">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -11,23 +11,23 @@
         android:roundIcon="@drawable/iconeapp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.TelaLogin">
+        <activity android:name="blackbelt.com.geeksbook.views.TelaLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.MenuPrincipal" />
-        <activity android:name=".views.Catalogo" />
-        <activity android:name=".views.CatalogoTodosLivros" />
-        <activity android:name=".views.CatalogoCategoria" />
-        <activity android:name=".views.CatalogoBusca" />
-        <activity android:name=".views.AdministrarLivros" />
-        <activity android:name=".views.AlteracaoDeSenha" />
-        <activity android:name=".views.EquipeDesenvolvimento" />
-        <activity android:name=".views.PrimeiroAcesso" />
-        <activity android:name=".views.CadastroLivro" />
+        <activity android:name="blackbelt.com.geeksbook.views.MenuPrincipal" />
+        <activity android:name="blackbelt.com.geeksbook.views.Catalogo" />
+        <activity android:name="blackbelt.com.geeksbook.views.CatalogoTodosLivros" />
+        <activity android:name="blackbelt.com.geeksbook.views.CatalogoCategoria" />
+        <activity android:name="blackbelt.com.geeksbook.views.CatalogoBusca" />
+        <activity android:name="blackbelt.com.geeksbook.views.AdministrarLivros" />
+        <activity android:name="blackbelt.com.geeksbook.views.AlteracaoDeSenha" />
+        <activity android:name="blackbelt.com.geeksbook.views.EquipeDesenvolvimento" />
+        <activity android:name="blackbelt.com.geeksbook.views.PrimeiroAcesso" />
+        <activity android:name="blackbelt.com.geeksbook.views.CadastroLivro" />
         <activity android:name=".Custom_Layout" />
     </application>
 

@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="blackbelt.com.livrariasaraiva.views.Catalogo">
+        tools:context="blackbelt.com.geeksbook.views.Catalogo">
 
         <RelativeLayout
             android:id="@+id/cabecalho"

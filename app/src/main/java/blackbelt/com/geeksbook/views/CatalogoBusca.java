@@ -1,4 +1,4 @@
-package blackbelt.com.livrariasaraiva.views;
+package blackbelt.com.geeksbook.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,9 +10,9 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import blackbelt.com.livrariasaraiva.R;
-import blackbelt.com.livrariasaraiva.dao.LivrariaDao;
-import blackbelt.com.livrariasaraiva.utils.Livro;
+import blackbelt.com.geeksbook.R;
+import blackbelt.com.geeksbook.dao.LivrariaDao;
+import blackbelt.com.geeksbook.utils.Livro;
 
 public class CatalogoBusca extends AppCompatActivity {
 

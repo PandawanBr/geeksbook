@@ -1,4 +1,4 @@
-package blackbelt.com.livrariasaraiva.views;
+package blackbelt.com.geeksbook.views;
 
 import android.content.Intent;
 import android.graphics.Paint;
@@ -10,8 +10,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import blackbelt.com.livrariasaraiva.R;
-import blackbelt.com.livrariasaraiva.dao.LivrariaDao;
+import blackbelt.com.geeksbook.R;
+import blackbelt.com.geeksbook.dao.LivrariaDao;
+import blackbelt.com.geeksbook.utils.Login;
 
 public class TelaLogin extends AppCompatActivity {
 
@@ -20,6 +21,8 @@ public class TelaLogin extends AppCompatActivity {
     private ImageButton logar;
     private ImageButton sair;
     private EditText login, senha;
+
+    Login loginCad = new Login();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +51,15 @@ public class TelaLogin extends AppCompatActivity {
         if(!loginValidar.isEmpty() && !senhaValidar.isEmpty()){
             if (dao.realizarLogin(loginValidar, senhaValidar)){
 
+                loginCad.setLogin(loginValidar.toString());
+                loginCad.setSenha(senhaValidar.toString());
+
                 Toast.makeText(this, "Acessando", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(this, MenuPrincipal.class);
+
+                intent.putExtra("login", loginCad);
+
                 startActivity(intent);
 
             } else {

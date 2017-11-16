@@ -1,4 +1,4 @@
-package blackbelt.com.livrariasaraiva.views;
+package blackbelt.com.geeksbook.views;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,10 +12,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import blackbelt.com.livrariasaraiva.FormularioHelper;
-import blackbelt.com.livrariasaraiva.R;
-import blackbelt.com.livrariasaraiva.dao.LivrariaDao;
-import blackbelt.com.livrariasaraiva.utils.Livro;
+import blackbelt.com.geeksbook.helper.FormularioHelper;
+import blackbelt.com.geeksbook.R;
+import blackbelt.com.geeksbook.dao.LivrariaDao;
+import blackbelt.com.geeksbook.utils.Livro;
 
 public class CadastroLivro extends AppCompatActivity {
 
@@ -38,7 +38,7 @@ public class CadastroLivro extends AppCompatActivity {
         Intent intent = getIntent();
         Livro livro = (Livro) intent.getSerializableExtra("livro");
 
-        if (livro != null){
+        if (livro.getId() != null){
             helper.preencheFormulario(livro);
 
             isbn.setEnabled(false);
@@ -77,12 +77,19 @@ public class CadastroLivro extends AppCompatActivity {
 
         LivrariaDao dao = new LivrariaDao(this);
 
-
-        Livro livro = new Livro();
+        Livro livro = helper.pegaLivro();
 
         if(helper.conferirCampos()) {
+            if(livro.getId() != null) {
 
-            dao.insereLivro(helper.pegaLivro());
+                dao.alterar(livro);
+
+            } else {
+
+                dao.insereLivro(helper.pegaLivro());
+
+            }
+
             dao.close();
 
             Toast.makeText(this, "Salvo com sucesso!!", Toast.LENGTH_SHORT).show();

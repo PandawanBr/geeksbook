@@ -1,12 +1,13 @@
-package blackbelt.com.livrariasaraiva;
+package blackbelt.com.geeksbook.helper;
 
 import android.net.Uri;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
-import blackbelt.com.livrariasaraiva.utils.Livro;
-import blackbelt.com.livrariasaraiva.views.CadastroLivro;
+import blackbelt.com.geeksbook.R;
+import blackbelt.com.geeksbook.utils.Livro;
+import blackbelt.com.geeksbook.views.CadastroLivro;
 
 /**
  * Created by kobayashi on 15/11/17.
@@ -97,8 +98,6 @@ public class FormularioHelper {
         qtdPaginas.setText(String.valueOf(livro.getQtdPags()));
         anoPublicacao.setText(String.valueOf(livro.getAnoPub()));
         editora.setText(livro.getNomeEditora());
-
-
 
         this.livro = livro;
 

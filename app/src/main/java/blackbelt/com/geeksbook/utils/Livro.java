@@ -1,4 +1,4 @@
-package blackbelt.com.livrariasaraiva.utils;
+package blackbelt.com.geeksbook.utils;
 
 import java.io.Serializable;
 
@@ -19,7 +19,7 @@ public class Livro implements Serializable{
     private String categoria;
     private String imagemCapa;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

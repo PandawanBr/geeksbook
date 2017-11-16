@@ -1,4 +1,4 @@
-package blackbelt.com.livrariasaraiva.views;
+package blackbelt.com.geeksbook.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +13,9 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import blackbelt.com.livrariasaraiva.R;
-import blackbelt.com.livrariasaraiva.dao.LivrariaDao;
-import blackbelt.com.livrariasaraiva.utils.Livro;
+import blackbelt.com.geeksbook.R;
+import blackbelt.com.geeksbook.dao.LivrariaDao;
+import blackbelt.com.geeksbook.utils.Livro;
 
 public class AdministrarLivros extends AppCompatActivity {
 
@@ -44,7 +44,6 @@ public class AdministrarLivros extends AppCompatActivity {
 
                 startActivity(intent);
 
-                finish();
             }
         });
 

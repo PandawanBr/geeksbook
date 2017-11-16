@@ -1,4 +1,4 @@
-package blackbelt.com.livrariasaraiva;
+package blackbelt.com.geeksbook;
 
 import org.junit.Test;
 

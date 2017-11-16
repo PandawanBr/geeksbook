@@ -1,4 +1,4 @@
-package blackbelt.com.livrariasaraiva.dao;
+package blackbelt.com.geeksbook.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,8 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-import blackbelt.com.livrariasaraiva.utils.Livro;
-import blackbelt.com.livrariasaraiva.utils.Login;
+import blackbelt.com.geeksbook.utils.Livro;
+import blackbelt.com.geeksbook.utils.Login;
 
 /**
  * Created by kobayashi on 05/11/17.
@@ -235,4 +235,45 @@ public class LivrariaDao extends SQLiteOpenHelper{
         return listaLivros;
     }
 
+    public void alterar(Livro livro) {
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues dados = pegaDadosLivros(livro);
+
+        String[] params = {String.valueOf(livro.getId()).toString()};
+
+        db.update("tb_livros", dados, "nr_id = ?", params);
+
+    }
+
+    private ContentValues pegaDadosLivros(Livro livro) {
+        ContentValues dados = new ContentValues();
+
+        dados.put("nm_titulo", livro.getTitulo());
+        dados.put("cd_isbn", livro.getIsbn());
+        dados.put("nm_subtitulo", livro.getSubTitulo());
+        dados.put("nr_edicao", livro.getEdicao());
+        dados.put("nm_autor", livro.getAutor());
+        dados.put("qt_qtpags", livro.getQtdPags());
+        dados.put("dt_anopub", livro.getAnoPub());
+        dados.put("nm_editora", livro.getNomeEditora());
+        dados.put("nr_categoria", livro.getCategoria());
+        dados.put("img_imagem", livro.getImagemCapa());
+
+        return dados;
+    }
+
+    public void atualizarSenha(String log, String senCo) {
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues dados = new ContentValues();
+
+        String[] params = {log};
+
+        dados.put("txt_senha", senCo);
+
+        db.update("tb_acesso", dados, "nm_login = ?", params);
+    }
 }

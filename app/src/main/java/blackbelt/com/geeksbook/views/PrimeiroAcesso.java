@@ -1,4 +1,4 @@
-package blackbelt.com.livrariasaraiva.views;
+package blackbelt.com.geeksbook.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import blackbelt.com.livrariasaraiva.utils.Login;
-import blackbelt.com.livrariasaraiva.R;
-import blackbelt.com.livrariasaraiva.dao.LivrariaDao;
+import blackbelt.com.geeksbook.utils.Login;
+import blackbelt.com.geeksbook.R;
+import blackbelt.com.geeksbook.dao.LivrariaDao;
 
 public class PrimeiroAcesso extends AppCompatActivity {
 

@@ -13,7 +13,7 @@
         android:layout_marginRight="15sp"
         android:layout_marginLeft="15sp"
         android:layout_marginTop="5sp"
-        tools:context="blackbelt.com.livrariasaraiva.views.AlteracaoDeSenha">
+        tools:context="blackbelt.com.geeksbook.views.AlteracaoDeSenha">
 
         <RelativeLayout
             android:id="@+id/cabecalho"
