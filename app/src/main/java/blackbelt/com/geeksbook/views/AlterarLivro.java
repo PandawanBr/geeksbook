@@ -43,7 +43,7 @@ public class AlterarLivro extends AppCompatActivity {
 
         LivrariaDao dao = new LivrariaDao(this);
 
-        Livro livro = helper.pegaLivro();
+        Livro livro = helper.pegaLivroNovo();
 
 
         dao.alterar(livro);

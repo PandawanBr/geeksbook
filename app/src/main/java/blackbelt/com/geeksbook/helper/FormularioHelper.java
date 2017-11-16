@@ -85,6 +85,22 @@ public class FormularioHelper {
         return livro;
     }
 
+    public Livro pegaLivroNovo(){
+
+        livro.setImagemCapa(caminhoImagem.toString());
+        livro.setIsbn(Integer.parseInt(isbn.getText().toString()));
+        livro.setTitulo(titulo.getText().toString());
+        livro.setSubTitulo(subTitulo.getText().toString());
+        livro.setEdicao(Integer.parseInt(edicao.getText().toString()));
+        livro.setAutor(autor.getText().toString());
+        livro.setQtdPags(Integer.parseInt(qtdPaginas.getText().toString()));
+        livro.setAnoPub(Integer.parseInt(anoPublicacao.getText().toString()));
+        livro.setNomeEditora(editora.getText().toString());
+        livro.setCategoria(categoria.getSelectedItem().toString());
+
+        return livro;
+    }
+
     public boolean conferirCampos(){
         if(!isbn.getText().equals("") &&
                 !titulo.getText().equals("") &&
@@ -115,6 +131,8 @@ public class FormularioHelper {
         qtdPaginas.setText(String.valueOf(livro.getQtdPags()));
         anoPublicacao.setText(String.valueOf(livro.getAnoPub()));
         editora.setText(livro.getNomeEditora());
+
+        caminhoImagem = Uri.parse(livro.getImagemCapa());
 
         this.livro = livro;
 
