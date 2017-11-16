@@ -13,7 +13,7 @@
         android:layout_marginRight="15sp"
         android:layout_marginLeft="15sp"
         android:layout_marginTop="5sp"
-        tools:context="blackbelt.com.geeksbook.views.AlteracaoDeSenha">
+        tools:context="blackbelt.com.geeksbook.views.EsqueceuSenha1">
 
         <RelativeLayout
             android:id="@+id/cabecalho"
@@ -47,7 +47,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/nomeLivraria"
                 android:layout_marginBottom="10sp"
-                android:text="Alteração de Senha"
+                android:text="Esqueceu a Senha?"
                 android:textColor="@color/letrasPadrao"
                 android:textSize="20sp" />
 
@@ -71,30 +71,7 @@
             android:textSize="20sp"
             android:gravity="center"
             android:textColor="@color/letrasPadrao"
-            android:id="@+id/login"
-            android:enabled="false"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Senha Atual"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="@color/letrasPadrao"
-            android:layout_marginTop="5sp"
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:hint="Insira a Senha Atual..."
-            android:textColor="@color/letrasPadrao"
-            android:id="@+id/senhaAtual"
+            android:id="@+id/loginNovo"
             />
 
         <TextView
@@ -114,7 +91,6 @@
             android:inputType="textPassword"
             android:textSize="20sp"
             android:gravity="center"
-            android:hint="Insira a Nova Senha..."
             android:textColor="@color/letrasPadrao"
             android:id="@+id/novaSenha"
             />
@@ -136,7 +112,6 @@
             android:inputType="textPassword"
             android:textSize="20sp"
             android:gravity="center"
-            android:hint="Confirme a Senha..."
             android:textColor="@color/letrasPadrao"
             android:id="@+id/confirmaSenha"
             />
@@ -144,7 +119,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30sp">
+            android:layout_marginTop="70sp"
+            android:layout_marginBottom="10sp">
 
             <ImageButton
                 android:layout_width="50sp"
@@ -152,7 +128,7 @@
                 android:background="@drawable/salvar"
                 android:id="@+id/salvarDados"
                 style="?attr/borderlessButtonStyle"
-                android:onClick="atualizarSenha"
+                android:onClick="gerarNovaSenha"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="40sp"
                 />
@@ -164,7 +140,7 @@
                 style="?attr/borderlessButtonStyle"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="40sp"
-                android:onClick="voltar"
+                android:onClick="sair"
                 />
 
             <TextView

@@ -8,19 +8,16 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import blackbelt.com.geeksbook.helper.FormularioHelper;
 import blackbelt.com.geeksbook.R;
 import blackbelt.com.geeksbook.dao.LivrariaDao;
-import blackbelt.com.geeksbook.utils.Livro;
+import blackbelt.com.geeksbook.helper.FormularioHelper;
 
 public class CadastroLivro extends AppCompatActivity {
 
     private ImageView imagemCapa;
-    private EditText isbn;
     private FormularioHelper helper;
     public static final int PICK_IMAGE = 1234;
     private static int RESULT_LOAD_IMAGE = 1;
@@ -31,18 +28,7 @@ public class CadastroLivro extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_livro);
         getSupportActionBar().hide();
 
-        isbn = (EditText) findViewById(R.id.cadastroIsbn);
-
         helper = new FormularioHelper(this);
-
-        Intent intent = getIntent();
-        Livro livro = (Livro) intent.getSerializableExtra("livro");
-
-        if (livro.getId() != null){
-            helper.preencheFormulario(livro);
-
-            isbn.setEnabled(false);
-        }
 
     }
 
@@ -64,7 +50,6 @@ public class CadastroLivro extends AppCompatActivity {
             cursor.close();
             imagemCapa = (ImageView) findViewById(R.id.cadastroImagem);
             imagemCapa.setImageBitmap(BitmapFactory.decodeFile(picturePath));
-            Toast.makeText(this, picturePath, Toast.LENGTH_SHORT).show();
             helper.setCaminhoImagem(selectedImage);
         }
     }
@@ -77,18 +62,9 @@ public class CadastroLivro extends AppCompatActivity {
 
         LivrariaDao dao = new LivrariaDao(this);
 
-        Livro livro = helper.pegaLivro();
-
         if(helper.conferirCampos()) {
-            if(livro.getId() != null) {
 
-                dao.alterar(livro);
-
-            } else {
-
-                dao.insereLivro(helper.pegaLivro());
-
-            }
+            dao.insereLivro(helper.pegaLivro());
 
             dao.close();
 

@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
 import java.util.List;
 
 import blackbelt.com.geeksbook.R;
+import blackbelt.com.geeksbook.adapter.LivrosAdapter;
 import blackbelt.com.geeksbook.dao.LivrariaDao;
 import blackbelt.com.geeksbook.utils.Livro;
 
@@ -41,8 +41,7 @@ public class CatalogoCategoria extends AppCompatActivity {
                 List<Livro> livros = dao.listarLivrosCategoria(opcao);
                 dao.close();
 
-                ArrayAdapter<Livro> adapter = new ArrayAdapter<Livro>(
-                        CatalogoCategoria.this, android.R.layout.simple_list_item_1, livros);
+                LivrosAdapter adapter = new LivrosAdapter(CatalogoCategoria.this, livros);
 
                 listaCatalogo.setAdapter(adapter);
             }

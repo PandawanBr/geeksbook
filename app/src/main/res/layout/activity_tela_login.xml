@@ -114,6 +114,7 @@
                 android:layout_gravity="right"
                 android:gravity="right"
                 android:text="@string/esqueceuSenha"
+                android:onClick="esqueceuASenha"
                 android:textColor="#0000FF"
                 android:textSize="12sp"
                 android:textStyle="bold"

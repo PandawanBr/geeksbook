@@ -1,9 +1,8 @@
 package blackbelt.com.geeksbook.views;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -11,6 +10,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import blackbelt.com.geeksbook.R;
+import blackbelt.com.geeksbook.adapter.LivrosAdapter;
 import blackbelt.com.geeksbook.dao.LivrariaDao;
 import blackbelt.com.geeksbook.utils.Livro;
 
@@ -46,8 +46,7 @@ public class CatalogoBusca extends AppCompatActivity {
         List<Livro> livros = dao.listarLivros();
         dao.close();
 
-        ArrayAdapter<Livro> adapter = new ArrayAdapter<Livro>(
-                this, android.R.layout.simple_list_item_1, livros);
+        LivrosAdapter adapter = new LivrosAdapter(this, livros);
 
         listarLivros.setAdapter(adapter);
 
@@ -61,9 +60,7 @@ public class CatalogoBusca extends AppCompatActivity {
             List<Livro> livros = dao.pesquisaLivro(pesquisar);
             dao.close();
 
-            ArrayAdapter<Livro> adapter = new ArrayAdapter<Livro>(
-                    this, android.R.layout.simple_list_item_1, livros
-            );
+            LivrosAdapter adapter = new LivrosAdapter(this, livros);
 
             listarLivros.setAdapter(adapter);
         } else {

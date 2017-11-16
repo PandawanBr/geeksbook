@@ -135,7 +135,7 @@ public class LivrariaDao extends SQLiteOpenHelper{
         SQLiteDatabase db = getWritableDatabase();
 
 
-        String[] params = {String.valueOf(livro.getId()).toString()};
+        String[] params = {livro.getId().toString()};
 
         db.delete("tb_livros", "nr_id = ?", params);
 
@@ -241,7 +241,7 @@ public class LivrariaDao extends SQLiteOpenHelper{
 
         ContentValues dados = pegaDadosLivros(livro);
 
-        String[] params = {String.valueOf(livro.getId()).toString()};
+        String[] params = {livro.getId().toString()};
 
         db.update("tb_livros", dados, "nr_id = ?", params);
 
@@ -275,5 +275,19 @@ public class LivrariaDao extends SQLiteOpenHelper{
         dados.put("txt_senha", senCo);
 
         db.update("tb_acesso", dados, "nm_login = ?", params);
+    }
+
+    public boolean verificarLogin(String loginUsuario) {
+        String[] logar = new String[]{loginUsuario};
+        Cursor db = getReadableDatabase().query("tb_acesso", null,
+                "nm_login = ?",
+                logar, null, null, null);
+
+        if (db.getCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }

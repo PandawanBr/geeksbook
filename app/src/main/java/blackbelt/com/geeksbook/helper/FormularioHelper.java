@@ -5,6 +5,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import blackbelt.com.geeksbook.views.AlterarLivro;
 import blackbelt.com.geeksbook.R;
 import blackbelt.com.geeksbook.utils.Livro;
 import blackbelt.com.geeksbook.views.CadastroLivro;
@@ -29,6 +30,21 @@ public class FormularioHelper {
 
     private Livro livro;
 
+    public FormularioHelper(AlterarLivro alterarLivro) {
+        imagemCapa = (ImageView) alterarLivro.findViewById(R.id.cadastroImagem);
+        isbn = (EditText) alterarLivro.findViewById(R.id.cadastroIsbn);
+        titulo = (EditText) alterarLivro.findViewById(R.id.cadastroTitulo);
+        subTitulo = (EditText) alterarLivro.findViewById(R.id.cadastroSubTitulo);
+        edicao = (EditText) alterarLivro.findViewById(R.id.cadastroEdicao);
+        autor = (EditText) alterarLivro.findViewById(R.id.cadastroAutor);
+        qtdPaginas = (EditText) alterarLivro.findViewById(R.id.cadastroQtdPag);
+        anoPublicacao = (EditText) alterarLivro.findViewById(R.id.cadastroAnoPub);
+        editora = (EditText) alterarLivro.findViewById(R.id.cadastroNomeEditora);
+        categoria = (Spinner) alterarLivro.findViewById(R.id.cadastroCategoria);
+
+        livro = new Livro();
+    }
+
     public Uri getCaminhoImagem() {
         return caminhoImagem;
     }
@@ -36,6 +52,7 @@ public class FormularioHelper {
     public void setCaminhoImagem(Uri caminhoImagem) {
         this.caminhoImagem = caminhoImagem;
     }
+
 
     public FormularioHelper(CadastroLivro cadastroLivro){
         imagemCapa = (ImageView) cadastroLivro.findViewById(R.id.cadastroImagem);

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:background="@drawable/background"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,10 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginRight="15sp"
-        android:layout_marginLeft="15sp"
-        android:layout_marginTop="5sp"
-        tools:context="blackbelt.com.geeksbook.views.AlteracaoDeSenha">
+        tools:context="blackbelt.com.geeksbook.views.AlterarLivro">
 
         <RelativeLayout
             android:id="@+id/cabecalho"
@@ -47,98 +44,159 @@
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/nomeLivraria"
                 android:layout_marginBottom="10sp"
-                android:text="Alteração de Senha"
+                android:text="Administração - Novo Livro"
                 android:textColor="@color/letrasPadrao"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
-        <TextView
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150sp"
+            android:layout_marginRight="15sp"
+            android:layout_marginLeft="15sp">
+
+            <ImageView
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:id="@+id/cadastroImagem"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="5sp"/>
+
+            <ImageButton
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:background="@drawable/image_galeria"
+                android:id="@+id/cadastroBuscarImg"
+                android:onClick="selecionarImagem"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50sp"
+                android:layout_marginTop="30sp"
+                android:layout_alignBaseline="@id/cadastroImagem"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="Buscar Imagem"
+                android:layout_below="@id/cadastroBuscarImg"
+                android:textColor="@color/letrasPadrao"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25sp"
+                />
+
+        </RelativeLayout>
+
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:gravity="center"
+            android:hint="Número do ISBN..."
+            android:textSize="15sp"
+            android:id="@+id/cadastroIsbn"
+            android:inputType="number"
             android:textColor="@color/letrasPadrao"
-            android:layout_marginTop="80sp"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
             />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Título do Livro..."
+            android:textSize="15sp"
             android:inputType="text"
-            android:textSize="20sp"
-            android:gravity="center"
+            android:id="@+id/cadastroTitulo"
             android:textColor="@color/letrasPadrao"
-            android:id="@+id/login"
-            android:enabled="false"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Senha Atual"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="@color/letrasPadrao"
-            android:layout_marginTop="5sp"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
             />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:hint="Insira a Senha Atual..."
+            android:hint="Sub-Título do Livro (Se houver)..."
+            android:textSize="15sp"
+            android:inputType="text"
+            android:id="@+id/cadastroSubTitulo"
             android:textColor="@color/letrasPadrao"
-            android:id="@+id/senhaAtual"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nova Senha"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="@color/letrasPadrao"
-            android:layout_marginTop="5sp"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
             />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:hint="Insira a Nova Senha..."
+            android:hint="Número da Edição do Livro..."
+            android:textSize="15sp"
+            android:inputType="number"
+            android:maxLength="4"
+            android:id="@+id/cadastroEdicao"
             android:textColor="@color/letrasPadrao"
-            android:id="@+id/novaSenha"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Confirma Senha"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="@color/letrasPadrao"
-            android:layout_marginTop="5sp"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
             />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:hint="Confirme a Senha..."
+            android:hint="Nome do Autor..."
+            android:textSize="15sp"
+            android:inputType="textPersonName"
+            android:id="@+id/cadastroAutor"
             android:textColor="@color/letrasPadrao"
-            android:id="@+id/confirmaSenha"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantidade de Páginas..."
+            android:textSize="15sp"
+            android:inputType="number"
+            android:id="@+id/cadastroQtdPag"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ano de Publicação..."
+            android:textSize="15sp"
+            android:id="@+id/cadastroAnoPub"
+            android:inputType="number"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            android:maxLength="4"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome da Editora..."
+            android:textSize="15sp"
+            android:inputType="textNoSuggestions"
+            android:id="@+id/cadastroNomeEditora"
+            android:textColor="@color/letrasPadrao"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            />
+
+        <Spinner
+            android:id="@+id/cadastroCategoria"
+            android:layout_width="fill_parent"
+            android:layout_height="30sp"
+            android:scrollbarSize="30sp"
+            android:layout_marginRight="15sp"
+            android:layout_marginLeft="15sp"
+            android:entries="@array/categorias"
+            android:layout_below="@id/cabecalho"
             />
 
         <RelativeLayout
@@ -151,8 +209,6 @@
                 android:layout_height="50sp"
                 android:background="@drawable/salvar"
                 android:id="@+id/salvarDados"
-                style="?attr/borderlessButtonStyle"
-                android:onClick="atualizarSenha"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="40sp"
                 />
@@ -161,7 +217,6 @@
                 android:layout_width="50sp"
                 android:layout_height="50sp"
                 android:background="@drawable/back"
-                style="?attr/borderlessButtonStyle"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="40sp"
                 android:onClick="voltar"
@@ -191,6 +246,7 @@
 
 
         </RelativeLayout>
+
 
     </LinearLayout>
 </ScrollView>

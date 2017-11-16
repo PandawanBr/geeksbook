@@ -81,5 +81,10 @@ public class TelaLogin extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void esqueceuASenha(View v) {
+        Intent intent = new Intent(this, EsqueceuSenha.class);
+        startActivity(intent);
+    }
+
 
 }
